@@ -4,5 +4,8 @@
     "@playwright/test": "^1.48.1",
     "@types/node": "^22.7.5"
   },
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.0"
+  }
 }
