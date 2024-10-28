@@ -13,6 +13,8 @@ test('get started link', async ({ page }) => {
   await getStarted.click();
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  //how to take screenshot of page
+  await page.screenshot({path:"screenshot.png", fullPage: true});
 });
 test('test playwright code gen', async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc/#/');
@@ -24,6 +26,5 @@ test('test playwright code gen', async ({ page }) => {
   await page.getByRole('link', { name: 'TodoMVC', exact: true }).click();
   await page.getByRole('banner').click();
   await page.getByText('Examples JavaScript Compile-').click();
-  await expect(page.getByPlaceholder('What needs to be done?')).toBeEmpty();
   await expect(page.getByPlaceholder('What needs to be done?')).toBeEmpty();
 });
