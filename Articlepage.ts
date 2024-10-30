@@ -14,8 +14,6 @@ export class ArticleDevPage {
     });
   }
 
-
-
   async pageObjectModel() {
     const getstarted = new LandingpageDev(this.page);
     await getstarted.getStarted();
