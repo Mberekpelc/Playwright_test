@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
 export class LandingpageDev {
   readonly page: Page;
@@ -18,6 +18,5 @@ export class LandingpageDev {
 
   async getStarted() {
     await this.getStartedLink.first().click();
-    await expect(this.gettingStartedHeader).toBeVisible();
   }
 }

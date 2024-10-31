@@ -6,6 +6,7 @@ test('getting started should contain table of contents', async ({ page }) => {
   const playwrightDev = new LandingpageDev(page);
   await playwrightDev.goto();
   await playwrightDev.getStarted();
+  await expect(playwrightDev.gettingStartedHeader).toBeVisible();
   await expect(playwrightDev.tocList).toHaveText([
     `How to install Playwright`,
     `What's Installed`,
