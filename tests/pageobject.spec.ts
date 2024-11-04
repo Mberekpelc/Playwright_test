@@ -1,13 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { ArticleDevPage } from '../Articlepage.ts';
-import { LandingpageDev } from "../Landingpage.ts";
+import { test, expect } from '../Fixtures.ts';
+// import { ArticleDevPage } from '../Articlepage.ts';
+// import { LandingpageDev } from "../Landingpage.ts";
 
-test('getting started should contain table of contents', async ({ page }) => {
-  const playwrightDev = new LandingpageDev(page);
-  await playwrightDev.goto();
-  await playwrightDev.getStarted();
-  await expect(playwrightDev.gettingStartedHeader).toBeVisible();
-  await expect(playwrightDev.tocList).toHaveText([
+test('getting started should contain table of contents', async ({ LandingpageDev}) => {
+  // const playwrightDev = new LandingpageDev(page); //this is by using page object instead of fixtures
+  await LandingpageDev.goto();
+  await LandingpageDev.getStarted();
+  await expect(LandingpageDev.gettingStartedHeader).toBeVisible();
+  await expect(LandingpageDev.tocList).toHaveText([
     `How to install Playwright`,
     `What's Installed`,
     `How to run the example test`,
@@ -19,10 +19,10 @@ test('getting started should contain table of contents', async ({ page }) => {
   ]);
 });
 
-test('should show Page Object Model article', async ({ page }) => {
-  const Landingpage = new LandingpageDev(page);
-  const Articlepage = new ArticleDevPage(page);
-  await Landingpage.goto();
-  await Articlepage.pageObjectModel();
+test('should show Page Object Model article', async ({ page, ArticleDevPage, LandingpageDev }) => {
+  // const Landingpage = new LandingpageDev(page); //this is by using page object instead of fixtures
+  // const Articlepage = new ArticleDevPage(page);
+  await LandingpageDev.goto();
+  await ArticleDevPage.pageObjectModel();
   await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
 });
