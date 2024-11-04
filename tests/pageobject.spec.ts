@@ -1,4 +1,4 @@
-import { test, expect } from '../Fixtures.ts';
+import { test, expect,test1} from '../Fixtures.ts';
 // import { ArticleDevPage } from '../Articlepage.ts';
 // import { LandingpageDev } from "../Landingpage.ts";
 
@@ -26,3 +26,9 @@ test('should show Page Object Model article', async ({ page, ArticleDevPage, Lan
   await ArticleDevPage.pageObjectModel();
   await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
 });
+
+test1("test fixtures with supplied data", async({Username, Password, Age})=>{
+  Username = "Testing02";
+  console.log(Username, Password, Age + 8);
+
+})
