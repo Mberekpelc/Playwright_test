@@ -4,8 +4,7 @@ import { LandingpageDev } from "./Landingpage";
 
 
 
-export const mytest = base.extend<{ArticleDevPage: ArticleDevPage
-LandingpageDev: LandingpageDev}>({
+export const mytest = base.extend<{ArticleDevPage: ArticleDevPage, LandingpageDev: LandingpageDev}>({
     ArticleDevPage: async({page}, use) =>{
         await use(new ArticleDevPage(page));
    
